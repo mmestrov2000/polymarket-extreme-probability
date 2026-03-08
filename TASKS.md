@@ -157,7 +157,7 @@ Notes:
 ## Milestone 2 - Market Data Collection
 
 ### T2.1 Implement thin public API clients
-Status: `pending`
+Status: `completed`
 
 Goal:
 - create reusable Python clients for the confirmed Polymarket API surfaces
@@ -171,6 +171,11 @@ Acceptance criteria:
 - each client can fetch a representative endpoint used in Milestone 1
 - parsing behavior is covered by tests using saved payload samples
 - client modules contain no research-specific business logic
+
+Notes:
+- `src/clients/rest.py` now provides the shared public REST foundation for request timeouts, retryable-status handling, and thin normalization helpers for decimals, datetimes, and nested record wrappers.
+- `src/clients/gamma.py`, `src/clients/clob.py`, and `src/clients/data_api.py` now implement reusable public clients for the Milestone 1 verified Gamma, CLOB, and Data API endpoints without embedding research-specific logic.
+- `tests/test_public_api_clients.py` and `tests/fixtures/public_clients/` now cover representative endpoint fetching, fixture-based normalization, and retry behavior through `httpx.MockTransport`.
 
 ### T2.2 Implement raw storage and normalized schemas
 Status: `pending`

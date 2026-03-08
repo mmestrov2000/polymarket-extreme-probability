@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "id": "12345",
+      "question": "Will the sample event resolve YES?",
+      "slug": "sample-event-yes",
+      "conditionId": "0xcondition123",
+      "clobTokenIds": "[\"111\", \"222\"]",
+      "active": true,
+      "endDate": "2026-03-31T12:00:00Z",
+      "liquidity": "12345.67",
+      "volume": "76543.21"
+    },
+    {
+      "id": "67890",
+      "question": "Will the backup event resolve NO?",
+      "slug": "backup-event-no",
+      "condition_id": "0xcondition456",
+      "clob_token_ids": [
+        "333",
+        "444"
+      ],
+      "active": "false",
+      "end_date": "2026-04-01T08:30:00+00:00",
+      "liquidity": "321.09",
+      "volume": "1111.00"
+    }
+  ]
+}
