@@ -1,0 +1,10 @@
+.venv/
+.worktrees/
+__pycache__/
+.pytest_cache/
+.env
+.env.*
+.ipynb_checkpoints/
+prompts/
+scripts/local/
+skills/
