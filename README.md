@@ -98,6 +98,12 @@ scripts/bootstrap_env.sh
 source .venv/bin/activate
 ```
 
+Copy the environment template before adding real credentials:
+
+```bash
+cp .env.example .env
+```
+
 ### First Read
 
 1. Read `PROJECT_SPEC.md`.
@@ -125,6 +131,15 @@ Its job is to verify:
 - keep changes aligned with `PROJECT_SPEC.md`, `ARCHITECTURE.md`, and `TASKS.md`
 - keep tasks small and testable
 - prefer proving data availability before building strategy logic
+
+## Validation
+
+Run the same baseline checks locally before opening a PR:
+
+```bash
+scripts/validate_repo.sh
+.venv/bin/pytest
+```
 
 ## Technical Direction
 
