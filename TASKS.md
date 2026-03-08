@@ -178,7 +178,7 @@ Notes:
 - `tests/test_public_api_clients.py` and `tests/fixtures/public_clients/` now cover representative endpoint fetching, fixture-based normalization, and retry behavior through `httpx.MockTransport`.
 
 ### T2.2 Implement raw storage and normalized schemas
-Status: `pending`
+Status: `completed`
 
 Goal:
 - make collection reproducible and analytics-ready
@@ -192,6 +192,11 @@ Acceptance criteria:
 - raw payloads can be stored without overwriting prior captures
 - normalized tables exist for markets, prices, and trades
 - repeated ingestion does not create uncontrolled duplication
+
+Notes:
+- `src/storage/raw.py` now defines append-only raw capture helpers under `data/raw/<source>/<dataset>/date=YYYY-MM-DD/` with capture metadata including endpoint, request params, and UTC collection time, using JSON for object payloads and JSONL for list-like payloads.
+- `src/storage/warehouse.py` now provisions DuckDB tables for `markets`, `market_tokens`, `price_history`, and `trades`, and provides idempotent upsert helpers for `GammaMarket`, `PriceHistory`, and `TradeRecord` inputs.
+- `tests/test_storage.py` covers append-only raw writes, schema creation, and repeated upserts without duplicate normalized rows.
 
 ### T2.3 Build a sample market backfill command
 Status: `pending`
