@@ -1,0 +1,107 @@
+{
+  "leaderboard": {
+    "leaderboard": [
+      {
+        "proxyWallet": "0xwallet1",
+        "rank": 1,
+        "pnl": "2500.75",
+        "vol": "100000.00",
+        "userName": "whale_1",
+        "verifiedBadge": true
+      }
+    ]
+  },
+  "positions": [
+    {
+      "proxyWallet": "0xwallet1",
+      "positions": [
+        {
+          "asset": "111",
+          "conditionId": "0xcondition123",
+          "size": "500",
+          "avgPrice": "0.55",
+          "currentValue": "275.00",
+          "realizedPnl": "25.50",
+          "outcome": "YES",
+          "outcomeIndex": 0,
+          "totalBought": "300",
+          "endDate": "2026-03-31T12:00:00Z"
+        }
+      ]
+    }
+  ],
+  "closed_positions": [
+    {
+      "proxyWallet": "0xwallet1",
+      "asset": "111",
+      "conditionId": "0xcondition123",
+      "outcome": "YES",
+      "avgPrice": "0.44",
+      "realizedPnl": "125.50",
+      "totalBought": "500",
+      "timestamp": "2026-03-01T10:15:00Z",
+      "endDate": "2026-03-31T12:00:00Z"
+    }
+  ],
+  "activity": [
+    {
+      "proxyWallet": "0xwallet1",
+      "asset": "111",
+      "conditionId": "0xcondition123",
+      "outcome": "YES",
+      "side": "BUY",
+      "size": "100",
+      "price": "0.45",
+      "timestamp": "2026-03-01T10:00:00Z",
+      "transactionHash": "0xtx1",
+      "usdcSize": "45"
+    }
+  ],
+  "trades": [
+    {
+      "proxyWallet": "0xwallet2",
+      "asset": "111",
+      "conditionId": "0xcondition123",
+      "outcome": "NO",
+      "side": "SELL",
+      "size": "90",
+      "price": "0.56",
+      "timestamp": "2026-03-01T11:00:00Z",
+      "transactionHash": "0xtx2"
+    }
+  ],
+  "holders": [
+    {
+      "token": "111",
+      "holders": [
+        {
+          "proxyWallet": "0xwallet1",
+          "asset": "111",
+          "amount": "1500",
+          "outcomeIndex": 0
+        },
+        {
+          "proxyWallet": "0xwallet2",
+          "asset": "111",
+          "amount": "900",
+          "outcomeIndex": 0
+        }
+      ]
+    },
+    {
+      "token": "222",
+      "holders": [
+        {
+          "proxyWallet": "0xwallet3",
+          "asset": "222",
+          "amount": "700",
+          "outcomeIndex": 1
+        }
+      ]
+    }
+  ],
+  "oi": {
+    "market": "0xcondition123",
+    "value": "123456.78"
+  }
+}
