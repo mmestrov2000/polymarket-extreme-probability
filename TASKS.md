@@ -112,7 +112,7 @@ Notes:
 - `GET /positions` remained reachable but returned an empty snapshot for the sampled leaderboard wallet, so open-position coverage should be treated as wallet-dependent rather than guaranteed.
 
 ### T1.3 Verify WebSocket connectivity and message shape
-Status: `pending`
+Status: `completed`
 
 Goal:
 - prove that a live stream can be opened and that the message schema is understandable enough for a recorder
@@ -126,6 +126,12 @@ Acceptance criteria:
 - a local run receives at least one live message from the target feed
 - message samples are stored or pasted into notebook outputs
 - reconnect or heartbeat expectations are noted
+
+Notes:
+- `src/clients/polymarket_websocket.py` now provides a thin public market-channel helper that normalizes the `wss://.../ws/market` URL, sends the documented `assets_ids` subscription payload, persists captured samples, and records connection plus reconnect events.
+- `notebooks/polymarket_connection_checks/00_api_connection.ipynb` now reuses the selected Gamma/CLOB token id, captures live market-channel samples under `data/raw/websocket/connection_checks/`, and prints message-shape summaries plus representative payloads.
+- Live verification on 2026-03-08 captured a list-wrapped `book` payload containing `asset_id`, `market`, `hash`, `last_trade_price`, `tick_size`, `timestamp`, `bids`, and `asks`, which is sufficient to design a later recorder.
+- The public market-channel docs do not currently document an application-level heartbeat, so the helper treats observed close or timeout events as reconnect triggers and resends the same subscription once for the notebook check.
 
 ### T1.4 Produce an endpoint capability matrix
 Status: `pending`

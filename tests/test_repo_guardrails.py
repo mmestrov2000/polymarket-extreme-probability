@@ -47,7 +47,7 @@ def test_connection_notebook_is_valid_json() -> None:
     assert any(cell["cell_type"] == "markdown" for cell in notebook["cells"])
 
 
-def test_connection_notebook_contains_t1_1_and_t1_2_checks() -> None:
+def test_connection_notebook_contains_milestone_1_checks() -> None:
     notebook = load_connection_notebook()
     notebook_source = "\n".join("".join(cell["source"]) for cell in notebook["cells"])
 
@@ -69,6 +69,10 @@ def test_connection_notebook_contains_t1_1_and_t1_2_checks() -> None:
     assert "/trades" in notebook_source
     assert "/holders" in notebook_source
     assert "/oi" in notebook_source
+    assert "POLYMARKET_WS_URL" in notebook_source
+    assert "capture_market_channel_samples" in notebook_source
+    assert "message_shapes" in notebook_source
+    assert "data/raw/websocket/connection_checks" in notebook_source
     assert "Selected Data API wallet seed" in notebook_source
     assert "wallet_identity" in notebook_source
     assert "Known gaps or blockers" in notebook_source
@@ -77,7 +81,7 @@ def test_connection_notebook_contains_t1_1_and_t1_2_checks() -> None:
     assert "Gamma.conditionId == CLOB book.market" in notebook_source
     assert "Gamma.clobTokenIds[0] == CLOB book.asset_id" in notebook_source
     assert "Deferred to T1.2" not in notebook_source
-    assert "Deferred to T1.3" in notebook_source
+    assert "Deferred to T1.3" not in notebook_source
     assert "TODO: add Gamma API checks and persist representative payload samples." not in notebook_source
     assert "TODO: add CLOB API checks for market state, price history, and trades." not in notebook_source
 
