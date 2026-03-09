@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 620" role="img" aria-labelledby="title desc">
+<title>Milestone 4 extreme-probability figures</title>
+<desc>Bucketed calibration plots and cross-venue comparison for the extreme-probability study.</desc>
+<style>
+  .page { fill: #f4efe4; stroke: #ded3c3; stroke-width: 1; }
+  .panel { fill: #fffaf2; stroke: #d8cab6; stroke-width: 1.2; }
+  .placeholder { fill: #f8f2e9; stroke: #c7b79f; stroke-width: 1.2; stroke-dasharray: 8 6; }
+  .grid { stroke: #e4dacd; stroke-width: 1; }
+  .baseline { stroke: #40342a; stroke-width: 1.4; }
+  .ideal { stroke: #92826c; stroke-width: 1.6; stroke-dasharray: 6 6; }
+  .series { fill: none; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+  .series.low { stroke: #b35c17; }
+  .series.high { stroke: #0d6b6b; }
+  .point.low { fill: #cf7b2c; stroke: #8c4e14; stroke-width: 1.2; }
+  .point.high { fill: #1b8f8f; stroke: #115959; stroke-width: 1.2; }
+  .gap-bar.low { fill: #d88a42; }
+  .gap-bar.high { fill: #2f9f9f; }
+  .whisker { stroke: #2d241d; stroke-width: 1.8; }
+  .tick-marker { stroke: #2d241d; stroke-width: 3.2; stroke-linecap: round; }
+  .title { font: 700 28px Georgia, 'Times New Roman', serif; fill: #2a2018; }
+  .subtitle { font: 15px 'Helvetica Neue', Arial, sans-serif; fill: #5d4f41; }
+  .eyebrow { font: 600 12px 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; fill: #8a7257; }
+  .panel-title { font: 700 18px Georgia, 'Times New Roman', serif; fill: #30261d; }
+  .axis-label { font: 600 12px 'Helvetica Neue', Arial, sans-serif; fill: #4b3f33; }
+  .tick { font: 11px 'Helvetica Neue', Arial, sans-serif; fill: #6b5d4d; }
+  .note { font: 12px 'Helvetica Neue', Arial, sans-serif; fill: #766857; }
+  .point-label { font: 600 11px 'Helvetica Neue', Arial, sans-serif; fill: #2f261e; }
+  .placeholder-text { font: 700 18px Georgia, 'Times New Roman', serif; fill: #6f5f4a; }
+</style>
+<rect class="page" x="0" y="0" width="980" height="620" rx="24" />
+<text class="title" x="490.00" y="52.00" text-anchor="middle">Polymarket extreme-probability calibration</text>
+<text class="subtitle" x="490.00" y="80.00" text-anchor="middle">2 percentage-point buckets below 10% and above 90%; diagonal line marks perfect calibration.</text>
+<text class="eyebrow" x="490.00" y="108.00" text-anchor="middle">139633 resolved markets | 139633 ticks | 139633 threshold-entry events</text>
+<text class="axis-label" x="28" y="332" transform="rotate(-90 28 332)">Realized YES rate</text>
+<text class="axis-label" x="490.00" y="596.00" text-anchor="middle">Quoted probability</text>
+<rect class="panel" x="70" y="150" width="410" height="360" rx="18" />
+<text class="panel-title" x="275.00" y="180.00" text-anchor="middle">All-tick calibration</text>
+<text class="note" x="275.00" y="492.00" text-anchor="middle">Bucket labels show probability range and rows per point.</text>
+<line class="grid" x1="124.00" y1="202.00" x2="124.00" y2="450.00" />
+<line class="grid" x1="124.00" y1="202.00" x2="450.00" y2="202.00" />
+<text class="tick" x="124.00" y="472.00" text-anchor="middle">0%</text>
+<text class="tick" x="106.00" y="454.00" text-anchor="end">0%</text>
+<line class="grid" x1="205.50" y1="202.00" x2="205.50" y2="450.00" />
+<line class="grid" x1="124.00" y1="264.00" x2="450.00" y2="264.00" />
+<text class="tick" x="205.50" y="472.00" text-anchor="middle">25%</text>
+<text class="tick" x="106.00" y="392.00" text-anchor="end">25%</text>
+<line class="grid" x1="287.00" y1="202.00" x2="287.00" y2="450.00" />
+<line class="grid" x1="124.00" y1="326.00" x2="450.00" y2="326.00" />
+<text class="tick" x="287.00" y="472.00" text-anchor="middle">50%</text>
+<text class="tick" x="106.00" y="330.00" text-anchor="end">50%</text>
+<line class="grid" x1="368.50" y1="202.00" x2="368.50" y2="450.00" />
+<line class="grid" x1="124.00" y1="388.00" x2="450.00" y2="388.00" />
+<text class="tick" x="368.50" y="472.00" text-anchor="middle">75%</text>
+<text class="tick" x="106.00" y="268.00" text-anchor="end">75%</text>
+<line class="grid" x1="450.00" y1="202.00" x2="450.00" y2="450.00" />
+<line class="grid" x1="124.00" y1="450.00" x2="450.00" y2="450.00" />
+<text class="tick" x="450.00" y="472.00" text-anchor="middle">100%</text>
+<text class="tick" x="106.00" y="206.00" text-anchor="end">100%</text>
+<line class="ideal" x1="124.00" y1="450.00" x2="450.00" y2="202.00" />
+<circle class="point low" cx="124.00" cy="450.00" r="10.00" />
+<text class="point-label" x="132.00" y="438.00" text-anchor="start">0-2% | n=101256</text>
+<circle class="point high" cx="450.00" cy="202.00" r="10.00" />
+<text class="point-label" x="442.00" y="220.00" text-anchor="end">98-100% | n=38377</text>
+<rect class="panel" x="500" y="150" width="410" height="360" rx="18" />
+<text class="panel-title" x="705.00" y="180.00" text-anchor="middle">Threshold-entry calibration</text>
+<text class="note" x="705.00" y="492.00" text-anchor="middle">Bucket labels show probability range and rows per point.</text>
+<line class="grid" x1="554.00" y1="202.00" x2="554.00" y2="450.00" />
+<line class="grid" x1="554.00" y1="202.00" x2="880.00" y2="202.00" />
+<text class="tick" x="554.00" y="472.00" text-anchor="middle">0%</text>
+<text class="tick" x="536.00" y="454.00" text-anchor="end">0%</text>
+<line class="grid" x1="635.50" y1="202.00" x2="635.50" y2="450.00" />
+<line class="grid" x1="554.00" y1="264.00" x2="880.00" y2="264.00" />
+<text class="tick" x="635.50" y="472.00" text-anchor="middle">25%</text>
+<text class="tick" x="536.00" y="392.00" text-anchor="end">25%</text>
+<line class="grid" x1="717.00" y1="202.00" x2="717.00" y2="450.00" />
+<line class="grid" x1="554.00" y1="326.00" x2="880.00" y2="326.00" />
+<text class="tick" x="717.00" y="472.00" text-anchor="middle">50%</text>
+<text class="tick" x="536.00" y="330.00" text-anchor="end">50%</text>
+<line class="grid" x1="798.50" y1="202.00" x2="798.50" y2="450.00" />
+<line class="grid" x1="554.00" y1="388.00" x2="880.00" y2="388.00" />
+<text class="tick" x="798.50" y="472.00" text-anchor="middle">75%</text>
+<text class="tick" x="536.00" y="268.00" text-anchor="end">75%</text>
+<line class="grid" x1="880.00" y1="202.00" x2="880.00" y2="450.00" />
+<line class="grid" x1="554.00" y1="450.00" x2="880.00" y2="450.00" />
+<text class="tick" x="880.00" y="472.00" text-anchor="middle">100%</text>
+<text class="tick" x="536.00" y="206.00" text-anchor="end">100%</text>
+<line class="ideal" x1="554.00" y1="450.00" x2="880.00" y2="202.00" />
+<circle class="point low" cx="554.00" cy="450.00" r="10.00" />
+<text class="point-label" x="562.00" y="438.00" text-anchor="start">0-2% | n=101256</text>
+<circle class="point high" cx="880.00" cy="202.00" r="10.00" />
+<text class="point-label" x="872.00" y="220.00" text-anchor="end">98-100% | n=38377</text>
+</svg>
