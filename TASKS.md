@@ -58,7 +58,7 @@ Acceptance criteria:
 ## Milestone 1 - Dataset Inventory and Schema Mapping
 
 ### T1.1 Inventory the archive contents and extraction constraints
-Status: `pending`
+Status: `completed`
 
 Goal:
 - understand exactly what is available before writing normalization code
@@ -73,8 +73,12 @@ Acceptance criteria:
 - irrelevant file noise such as Apple metadata entries is explicitly identified
 - the team knows which files must be extracted or staged for the first-pass analysis
 
+Notes:
+- Delivered as an intentional Polymarket-only pass per the current milestone scope decision.
+- Inventory outputs are tracked in `reports/summaries/polymarket_inventory_manifest.json` and `reports/summaries/polymarket_inventory_summary.md`.
+
 ### T1.2 Define the canonical binary-market mapping
-Status: `pending`
+Status: `completed`
 
 Goal:
 - map venue-specific market and contract fields into one comparable model
@@ -89,8 +93,12 @@ Acceptance criteria:
 - the first-pass cohort is limited to resolved binary contracts with clear outcomes
 - unresolved schema questions are explicit rather than hidden in notebooks
 
+Notes:
+- Delivered as an intentional Polymarket-only pass per the current milestone scope decision.
+- The canonical market, contract, timestamp, and resolution mappings are documented in `reports/summaries/polymarket_inventory_summary.md`.
+
 ### T1.3 Choose the canonical priced-probability field
-Status: `pending`
+Status: `completed`
 
 Goal:
 - decide what "market-priced probability" means in the dataset for each venue
@@ -104,6 +112,10 @@ Acceptance criteria:
 - the first-pass analysis has one documented priced-probability definition per venue
 - price-source differences are not mixed silently
 - bucket boundaries for low and high extremes are fixed
+
+Notes:
+- Delivered as an intentional Polymarket-only pass per the current milestone scope decision.
+- The v1 priced-probability field is the YES-side value from `markets.outcome_prices` at `_fetched_at`, with `1 - no_price` only as an explicit fallback.
 
 ## Milestone 2 - Canonical Dataset Build
 

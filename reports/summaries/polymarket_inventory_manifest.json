@@ -1,0 +1,414 @@
+{
+  "venue": "polymarket",
+  "scope": "milestone_1_dataset_inventory_and_schema_mapping",
+  "raw_dir": "data/raw",
+  "polymarket_root": "data/raw/data/polymarket",
+  "ignored_entries": [
+    ".DS_Store",
+    "data/.DS_Store",
+    "data/polymarket/.DS_Store"
+  ],
+  "dataset_groups": [
+    {
+      "dataset": "markets",
+      "status": "included",
+      "note": "Use market snapshots as the v1 source of priced-probability observations.",
+      "file_count": 41,
+      "total_size_bytes": 106544701,
+      "glob_pattern": "data/polymarket/markets/*",
+      "first_path": "data/polymarket/markets/markets_0_10000.parquet",
+      "last_path": "data/polymarket/markets/markets_400000_408863.parquet",
+      "representative_paths": [
+        "data/polymarket/markets/markets_0_10000.parquet",
+        "data/polymarket/markets/markets_10000_20000.parquet",
+        "data/polymarket/markets/markets_390000_400000.parquet",
+        "data/polymarket/markets/markets_400000_408863.parquet"
+      ],
+      "partition_start_min": 0,
+      "partition_end_max": 408863
+    },
+    {
+      "dataset": "trades",
+      "status": "deferred",
+      "note": "Inventory only for Milestone 1; trade price derivation and contract-side mapping are deferred.",
+      "file_count": 40454,
+      "total_size_bytes": 48197567657,
+      "glob_pattern": "data/polymarket/trades/*",
+      "first_path": "data/polymarket/trades/trades_0_10000.parquet",
+      "last_path": "data/polymarket/trades/trades_404530000_404540000.parquet",
+      "representative_paths": [
+        "data/polymarket/trades/trades_0_10000.parquet",
+        "data/polymarket/trades/trades_10000_20000.parquet",
+        "data/polymarket/trades/trades_404520000_404530000.parquet",
+        "data/polymarket/trades/trades_404530000_404540000.parquet"
+      ],
+      "partition_start_min": 0,
+      "partition_end_max": 404540000
+    },
+    {
+      "dataset": "legacy_trades",
+      "status": "deferred",
+      "note": "Inventory only for Milestone 1; legacy FPMM trade normalization is deferred.",
+      "file_count": 221,
+      "total_size_bytes": 221018291,
+      "glob_pattern": "data/polymarket/legacy_trades/*",
+      "first_path": "data/polymarket/legacy_trades/trades_0_10000.parquet",
+      "last_path": "data/polymarket/legacy_trades/trades_2200000_2210000.parquet",
+      "representative_paths": [
+        "data/polymarket/legacy_trades/trades_0_10000.parquet",
+        "data/polymarket/legacy_trades/trades_10000_20000.parquet",
+        "data/polymarket/legacy_trades/trades_2190000_2200000.parquet",
+        "data/polymarket/legacy_trades/trades_2200000_2210000.parquet"
+      ],
+      "partition_start_min": 0,
+      "partition_end_max": 2210000
+    },
+    {
+      "dataset": "blocks",
+      "status": "excluded",
+      "note": "Ignore for the first-pass study because no analysis-ready snapshot records are present.",
+      "file_count": 785,
+      "total_size_bytes": 882514939,
+      "glob_pattern": "data/polymarket/blocks/*",
+      "first_path": "data/polymarket/blocks/blocks_4000000_4100000.parquet",
+      "last_path": "data/polymarket/blocks/blocks_82400000_82468431.parquet",
+      "representative_paths": [
+        "data/polymarket/blocks/blocks_4000000_4100000.parquet",
+        "data/polymarket/blocks/blocks_4100000_4200000.parquet",
+        "data/polymarket/blocks/blocks_82300000_82400000.parquet",
+        "data/polymarket/blocks/blocks_82400000_82468431.parquet"
+      ],
+      "partition_start_min": 4000000,
+      "partition_end_max": 82468431
+    },
+    {
+      "dataset": "lookup_json",
+      "status": "auxiliary",
+      "note": "Keep as a collateral lookup reference but do not use it as the priced-probability source.",
+      "file_count": 1,
+      "total_size_bytes": 1650620,
+      "glob_pattern": "data/polymarket/fpmm_collateral_lookup.json",
+      "first_path": "data/polymarket/fpmm_collateral_lookup.json",
+      "last_path": "data/polymarket/fpmm_collateral_lookup.json",
+      "representative_paths": [
+        "data/polymarket/fpmm_collateral_lookup.json"
+      ],
+      "partition_start_min": null,
+      "partition_end_max": null
+    }
+  ],
+  "schema_snapshots": [
+    {
+      "dataset": "markets",
+      "sample_path": "data/polymarket/markets/markets_0_10000.parquet",
+      "columns": [
+        {
+          "name": "id",
+          "duckdb_type": "VARCHAR"
+        },
+        {
+          "name": "condition_id",
+          "duckdb_type": "VARCHAR"
+        },
+        {
+          "name": "question",
+          "duckdb_type": "VARCHAR"
+        },
+        {
+          "name": "slug",
+          "duckdb_type": "VARCHAR"
+        },
+        {
+          "name": "outcomes",
+          "duckdb_type": "VARCHAR"
+        },
+        {
+          "name": "outcome_prices",
+          "duckdb_type": "VARCHAR"
+        },
+        {
+          "name": "clob_token_ids",
+          "duckdb_type": "VARCHAR"
+        },
+        {
+          "name": "volume",
+          "duckdb_type": "DOUBLE"
+        },
+        {
+          "name": "liquidity",
+          "duckdb_type": "DOUBLE"
+        },
+        {
+          "name": "active",
+          "duckdb_type": "BOOLEAN"
+        },
+        {
+          "name": "closed",
+          "duckdb_type": "BOOLEAN"
+        },
+        {
+          "name": "end_date",
+          "duckdb_type": "TIMESTAMP WITH TIME ZONE"
+        },
+        {
+          "name": "created_at",
+          "duckdb_type": "TIMESTAMP WITH TIME ZONE"
+        },
+        {
+          "name": "market_maker_address",
+          "duckdb_type": "VARCHAR"
+        },
+        {
+          "name": "_fetched_at",
+          "duckdb_type": "TIMESTAMP_NS"
+        }
+      ],
+      "required_columns": [
+        "id",
+        "condition_id",
+        "question",
+        "slug",
+        "outcomes",
+        "outcome_prices",
+        "clob_token_ids",
+        "closed",
+        "end_date",
+        "_fetched_at"
+      ],
+      "missing_columns": []
+    },
+    {
+      "dataset": "trades",
+      "sample_path": "data/polymarket/trades/trades_0_10000.parquet",
+      "columns": [
+        {
+          "name": "block_number",
+          "duckdb_type": "BIGINT"
+        },
+        {
+          "name": "transaction_hash",
+          "duckdb_type": "VARCHAR"
+        },
+        {
+          "name": "log_index",
+          "duckdb_type": "BIGINT"
+        },
+        {
+          "name": "order_hash",
+          "duckdb_type": "VARCHAR"
+        },
+        {
+          "name": "maker",
+          "duckdb_type": "VARCHAR"
+        },
+        {
+          "name": "taker",
+          "duckdb_type": "VARCHAR"
+        },
+        {
+          "name": "maker_asset_id",
+          "duckdb_type": "VARCHAR"
+        },
+        {
+          "name": "taker_asset_id",
+          "duckdb_type": "VARCHAR"
+        },
+        {
+          "name": "maker_amount",
+          "duckdb_type": "BIGINT"
+        },
+        {
+          "name": "taker_amount",
+          "duckdb_type": "BIGINT"
+        },
+        {
+          "name": "fee",
+          "duckdb_type": "BIGINT"
+        },
+        {
+          "name": "timestamp",
+          "duckdb_type": "INTEGER"
+        },
+        {
+          "name": "_fetched_at",
+          "duckdb_type": "TIMESTAMP_NS"
+        },
+        {
+          "name": "_contract",
+          "duckdb_type": "VARCHAR"
+        }
+      ],
+      "required_columns": [
+        "block_number",
+        "transaction_hash",
+        "log_index",
+        "order_hash",
+        "maker",
+        "taker",
+        "maker_asset_id",
+        "taker_asset_id",
+        "maker_amount",
+        "taker_amount",
+        "fee",
+        "timestamp",
+        "_fetched_at",
+        "_contract"
+      ],
+      "missing_columns": []
+    },
+    {
+      "dataset": "legacy_trades",
+      "sample_path": "data/polymarket/legacy_trades/trades_0_10000.parquet",
+      "columns": [
+        {
+          "name": "block_number",
+          "duckdb_type": "BIGINT"
+        },
+        {
+          "name": "transaction_hash",
+          "duckdb_type": "VARCHAR"
+        },
+        {
+          "name": "log_index",
+          "duckdb_type": "BIGINT"
+        },
+        {
+          "name": "fpmm_address",
+          "duckdb_type": "VARCHAR"
+        },
+        {
+          "name": "trader",
+          "duckdb_type": "VARCHAR"
+        },
+        {
+          "name": "amount",
+          "duckdb_type": "VARCHAR"
+        },
+        {
+          "name": "fee_amount",
+          "duckdb_type": "VARCHAR"
+        },
+        {
+          "name": "outcome_index",
+          "duckdb_type": "BIGINT"
+        },
+        {
+          "name": "outcome_tokens",
+          "duckdb_type": "VARCHAR"
+        },
+        {
+          "name": "is_buy",
+          "duckdb_type": "BOOLEAN"
+        },
+        {
+          "name": "timestamp",
+          "duckdb_type": "INTEGER"
+        },
+        {
+          "name": "_fetched_at",
+          "duckdb_type": "TIMESTAMP_NS"
+        }
+      ],
+      "required_columns": [
+        "block_number",
+        "transaction_hash",
+        "log_index",
+        "fpmm_address",
+        "trader",
+        "amount",
+        "fee_amount",
+        "outcome_index",
+        "outcome_tokens",
+        "is_buy",
+        "timestamp",
+        "_fetched_at"
+      ],
+      "missing_columns": []
+    }
+  ],
+  "included_dataset": "markets",
+  "deferred_datasets": [
+    "trades",
+    "legacy_trades"
+  ],
+  "canonical_field_mappings": [
+    {
+      "canonical_field": "market_id",
+      "source_field": "markets.id",
+      "note": "Primary market snapshot identifier for Polymarket."
+    },
+    {
+      "canonical_field": "condition_id",
+      "source_field": "markets.condition_id",
+      "note": "Cross-record market condition identifier for later joins."
+    },
+    {
+      "canonical_field": "question",
+      "source_field": "markets.question",
+      "note": "Human-readable market prompt."
+    },
+    {
+      "canonical_field": "slug",
+      "source_field": "markets.slug",
+      "note": "Stable URL-like market slug."
+    },
+    {
+      "canonical_field": "observation_time_utc",
+      "source_field": "markets._fetched_at",
+      "note": "Snapshot collection time for priced-probability observations."
+    },
+    {
+      "canonical_field": "market_end_time_utc",
+      "source_field": "markets.end_date",
+      "note": "Scheduled market end timestamp."
+    },
+    {
+      "canonical_field": "yes_outcome_label",
+      "source_field": "markets.outcomes[yes_index]",
+      "note": "YES label after strict binary label normalization."
+    },
+    {
+      "canonical_field": "no_outcome_label",
+      "source_field": "markets.outcomes[no_index]",
+      "note": "NO label after strict binary label normalization."
+    },
+    {
+      "canonical_field": "yes_contract_id",
+      "source_field": "markets.clob_token_ids[yes_index]",
+      "note": "CLOB token aligned to the YES outcome."
+    },
+    {
+      "canonical_field": "no_contract_id",
+      "source_field": "markets.clob_token_ids[no_index]",
+      "note": "CLOB token aligned to the NO outcome."
+    }
+  ],
+  "inclusion_rules": [
+    "Include only Polymarket market snapshot rows with exactly two outcomes.",
+    "Normalize outcomes strictly to YES and NO labels before building canonical contract fields.",
+    "Require `clob_token_ids` to contain exactly two token ids aligned with the binary outcomes.",
+    "Use the YES-side element of `outcome_prices` as the priced probability at `_fetched_at`.",
+    "Use `1 - no_price` only when the YES-side value is not mappable and the NO-side value is valid."
+  ],
+  "exclusion_rules": [
+    "Exclude non-binary markets and rows with more than two outcomes.",
+    "Exclude rows with ambiguous outcome labels that do not normalize cleanly to YES/NO.",
+    "Exclude rows with missing token alignment in `clob_token_ids`.",
+    "Exclude rows whose candidate prices cannot be normalized to the `[0, 1]` interval.",
+    "Exclude unresolved markets or closed snapshots whose YES/NO prices do not collapse to `1/0` or `0/1`."
+  ],
+  "priced_probability_rule": {
+    "primary_source": "markets.outcome_prices[yes_index]",
+    "fallback_source": "1 - markets.outcome_prices[no_index]",
+    "normalization": "Probabilities must be in the inclusive `[0, 1]` interval.",
+    "extreme_buckets": {
+      "low_probability_lt": 0.1,
+      "high_probability_gt": 0.9
+    }
+  },
+  "resolution_rule": {
+    "source": "markets.outcome_prices on terminal closed snapshots",
+    "rule": "Use the terminal `closed=true` snapshot where YES/NO prices collapse to `1/0` or `0/1`.",
+    "excluded_when": "The market is still open or the terminal prices are not unambiguous binary outcomes."
+  }
+}
