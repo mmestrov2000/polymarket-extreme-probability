@@ -267,7 +267,7 @@ Notes:
 ## Milestone 4 - Visualizations and Decision Memo
 
 ### T4.1 Produce the core figures
-Status: `pending`
+Status: `completed`
 
 Goal:
 - make the calibration results easy to inspect visually
@@ -282,8 +282,13 @@ Acceptance criteria:
 - there is at least one combined comparison figure
 - figures can be regenerated from the canonical dataset
 
+Notes:
+- `scripts/build_extreme_probability_reporting.py` now regenerates Milestone 4 figures from the canonical warehouse and writes SVG outputs under `reports/figures/`.
+- The current local archive generated `reports/figures/polymarket_bucketed_calibration.svg` plus `reports/figures/cross_venue_gap_comparison.svg`.
+- The combined comparison figure includes an explicit missing-venue placeholder for Kalshi because the current local archive still lacks `kalshi` canonical rows.
+
 ### T4.2 Write the research conclusion memo
-Status: `pending`
+Status: `completed`
 
 Goal:
 - end the project with an explicit decision rather than open-ended exploration
@@ -297,6 +302,11 @@ Acceptance criteria:
 - the conclusion is written under `reports/summaries/`
 - the memo states supported, unsupported, or inconclusive
 - the memo includes the next-step recommendation
+
+Notes:
+- `reports/summaries/milestone4_decision_memo.md` now records the current archive-backed conclusion.
+- On the present Polymarket-only warehouse, both low-probability overvaluation and high-probability undervaluation are `inconclusive`, and the memo recommends `stop`.
+- The memo explicitly calls out the missing Kalshi coverage, the `markets` snapshot price-source limitation, and the zero-spanning bootstrap gap caveat.
 
 ## Milestone 5 - Follow-on Decision
 

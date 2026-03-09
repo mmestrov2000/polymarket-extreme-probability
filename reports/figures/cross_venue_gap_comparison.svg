@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" role="img" aria-labelledby="title desc">
+<title>Milestone 4 extreme-probability figures</title>
+<desc>Bucketed calibration plots and cross-venue comparison for the extreme-probability study.</desc>
+<style>
+  .page { fill: #f4efe4; stroke: #ded3c3; stroke-width: 1; }
+  .panel { fill: #fffaf2; stroke: #d8cab6; stroke-width: 1.2; }
+  .placeholder { fill: #f8f2e9; stroke: #c7b79f; stroke-width: 1.2; stroke-dasharray: 8 6; }
+  .grid { stroke: #e4dacd; stroke-width: 1; }
+  .baseline { stroke: #40342a; stroke-width: 1.4; }
+  .ideal { stroke: #92826c; stroke-width: 1.6; stroke-dasharray: 6 6; }
+  .series { fill: none; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+  .series.low { stroke: #b35c17; }
+  .series.high { stroke: #0d6b6b; }
+  .point.low { fill: #cf7b2c; stroke: #8c4e14; stroke-width: 1.2; }
+  .point.high { fill: #1b8f8f; stroke: #115959; stroke-width: 1.2; }
+  .gap-bar.low { fill: #d88a42; }
+  .gap-bar.high { fill: #2f9f9f; }
+  .whisker { stroke: #2d241d; stroke-width: 1.8; }
+  .tick-marker { stroke: #2d241d; stroke-width: 3.2; stroke-linecap: round; }
+  .title { font: 700 28px Georgia, 'Times New Roman', serif; fill: #2a2018; }
+  .subtitle { font: 15px 'Helvetica Neue', Arial, sans-serif; fill: #5d4f41; }
+  .eyebrow { font: 600 12px 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; fill: #8a7257; }
+  .panel-title { font: 700 18px Georgia, 'Times New Roman', serif; fill: #30261d; }
+  .axis-label { font: 600 12px 'Helvetica Neue', Arial, sans-serif; fill: #4b3f33; }
+  .tick { font: 11px 'Helvetica Neue', Arial, sans-serif; fill: #6b5d4d; }
+  .note { font: 12px 'Helvetica Neue', Arial, sans-serif; fill: #766857; }
+  .point-label { font: 600 11px 'Helvetica Neue', Arial, sans-serif; fill: #2f261e; }
+  .placeholder-text { font: 700 18px Georgia, 'Times New Roman', serif; fill: #6f5f4a; }
+</style>
+<rect class="page" x="0" y="0" width="980" height="560" rx="24" />
+<text class="title" x="490.00" y="52.00" text-anchor="middle">Cross-venue extreme-bucket comparison</text>
+<text class="subtitle" x="490.00" y="80.00" text-anchor="middle">Bars show threshold-entry calibration gaps, whiskers show bootstrap gap intervals, and short markers show all-tick gaps.</text>
+<text class="eyebrow" x="490.00" y="108.00" text-anchor="middle">Threshold bars are the primary inference view.</text>
+<text class="axis-label" x="28" y="320" transform="rotate(-90 28 320)">Calibration gap</text>
+<rect class="panel" x="70" y="176" width="410" height="290" rx="18" />
+<text class="panel-title" x="275.00" y="206.00" text-anchor="middle">Polymarket</text>
+<line class="grid" x1="124.00" y1="422.00" x2="450.00" y2="422.00" />
+<text class="tick" x="106.00" y="426.00" text-anchor="end">-10.0 pp</text>
+<line class="grid" x1="124.00" y1="372.50" x2="450.00" y2="372.50" />
+<text class="tick" x="106.00" y="376.50" text-anchor="end">-5.0 pp</text>
+<line class="grid" x1="124.00" y1="323.00" x2="450.00" y2="323.00" />
+<text class="tick" x="106.00" y="327.00" text-anchor="end">+0.0 pp</text>
+<line class="grid" x1="124.00" y1="273.50" x2="450.00" y2="273.50" />
+<text class="tick" x="106.00" y="277.50" text-anchor="end">+5.0 pp</text>
+<line class="grid" x1="124.00" y1="224.00" x2="450.00" y2="224.00" />
+<text class="tick" x="106.00" y="228.00" text-anchor="end">+10.0 pp</text>
+<line class="baseline" x1="124.00" y1="323.00" x2="450.00" y2="323.00" />
+<rect class="gap-bar low" x="185.80" y="323.00" width="72.00" height="1.00" rx="10" />
+<line class="whisker" x1="221.80" y1="323.00" x2="221.80" y2="323.00" />
+<line class="whisker" x1="209.80" y1="323.00" x2="233.80" y2="323.00" />
+<line class="whisker" x1="209.80" y1="323.00" x2="233.80" y2="323.00" />
+<line class="tick-marker" x1="197.80" y1="323.00" x2="245.80" y2="323.00" />
+<text class="axis-label" x="221.80" y="444.00" text-anchor="middle">Low &lt;10%</text>
+<text class="note" x="221.80" y="464.00" text-anchor="middle">n=101256</text>
+<text class="point-label" x="221.80" y="313.00" text-anchor="middle">+0.0 pp</text>
+<rect class="gap-bar high" x="316.20" y="323.00" width="72.00" height="1.00" rx="10" />
+<line class="whisker" x1="352.20" y1="323.00" x2="352.20" y2="323.00" />
+<line class="whisker" x1="340.20" y1="323.00" x2="364.20" y2="323.00" />
+<line class="whisker" x1="340.20" y1="323.00" x2="364.20" y2="323.00" />
+<line class="tick-marker" x1="328.20" y1="323.00" x2="376.20" y2="323.00" />
+<text class="axis-label" x="352.20" y="444.00" text-anchor="middle">High &gt;90%</text>
+<text class="note" x="352.20" y="464.00" text-anchor="middle">n=38377</text>
+<text class="point-label" x="352.20" y="313.00" text-anchor="middle">+0.0 pp</text>
+<rect class="panel" x="500" y="176" width="410" height="290" rx="18" />
+<text class="panel-title" x="705.00" y="206.00" text-anchor="middle">Kalshi</text>
+<rect class="placeholder" x="554.00" y="224.00" width="326.00" height="198.00" rx="14" />
+<text class="placeholder-text" x="705.00" y="311.00" text-anchor="middle">Kalshi archive missing</text>
+<text class="note" x="705.00" y="337.00" text-anchor="middle">No local warehouse rows were available for this venue.</text>
+</svg>

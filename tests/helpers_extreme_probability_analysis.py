@@ -8,10 +8,20 @@ import duckdb
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT_PATH = REPO_ROOT / "scripts" / "build_extreme_probability_analysis.py"
+REPORTING_SCRIPT_PATH = REPO_ROOT / "scripts" / "build_extreme_probability_reporting.py"
 
 
 def load_analysis_script_module():
     spec = importlib.util.spec_from_file_location("build_extreme_probability_analysis", SCRIPT_PATH)
+    assert spec is not None
+    assert spec.loader is not None
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_reporting_script_module():
+    spec = importlib.util.spec_from_file_location("build_extreme_probability_reporting", REPORTING_SCRIPT_PATH)
     assert spec is not None
     assert spec.loader is not None
     module = importlib.util.module_from_spec(spec)
