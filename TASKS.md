@@ -120,7 +120,7 @@ Notes:
 ## Milestone 2 - Canonical Dataset Build
 
 ### T2.1 Implement archive discovery and inventory helpers
-Status: `pending`
+Status: `completed`
 
 Goal:
 - make archive inspection reproducible rather than notebook-only
@@ -135,8 +135,12 @@ Acceptance criteria:
 - inventory output is deterministic for a fixed archive
 - ignored noise files do not leak into later steps
 
+Notes:
+- Delivered as an intentional Polymarket-only pass per the current milestone scope decision.
+- The canonical build now persists `archive_inventory` rows directly into DuckDB via `src/datasets/polymarket_canonical.py` and `scripts/build_polymarket_canonical_dataset.py`.
+
 ### T2.2 Normalize markets, contracts, and resolution outcomes
-Status: `pending`
+Status: `completed`
 
 Goal:
 - build the comparable backbone of the analysis dataset
@@ -151,8 +155,13 @@ Acceptance criteria:
 - every included contract has a clear final outcome
 - unsupported edge cases are filtered or documented
 
+Notes:
+- Delivered as an intentional Polymarket-only pass per the current milestone scope decision.
+- The canonical build writes `market_catalog`, `contract_catalog`, and `resolution_outcomes` with explicit `venue` columns so later Kalshi normalization can join on the same contract-level shape.
+- Markets without mappable YES/NO labels or without a clear terminal YES/NO collapse are excluded from the canonical dataset.
+
 ### T2.3 Normalize tick observations
-Status: `pending`
+Status: `completed`
 
 Goal:
 - build the main table of probability observations used by the study
@@ -167,8 +176,12 @@ Acceptance criteria:
 - timestamps are comparable across venues
 - each observation records its source type explicitly
 
+Notes:
+- Delivered as an intentional Polymarket-only pass per the current milestone scope decision.
+- `tick_observations` now persists YES-side probabilities from `markets.outcome_prices` at normalized UTC observation times with explicit `price_source`, `source_dataset`, and `source_file` fields.
+
 ### T2.4 Build market-aware sampling views
-Status: `pending`
+Status: `completed`
 
 Goal:
 - prevent repeated ticks from dominating the primary conclusion
@@ -182,6 +195,11 @@ Acceptance criteria:
 - the repo can compare all-tick and market-aware summaries
 - the primary inference path does not rely on raw tick counts alone
 - sampling rules are documented and testable
+
+Notes:
+- Delivered as an intentional Polymarket-only pass per the current milestone scope decision.
+- `tick_observations` preserves the full descriptive view, while `threshold_entry_events` implements a threshold-entry sampling rule that emits the first low/high bucket entry and re-entry per contract.
+- The sampling behavior is covered by fixture-driven tests in `tests/test_polymarket_canonical_dataset.py`.
 
 ## Milestone 3 - Statistical Analysis
 

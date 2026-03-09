@@ -15,6 +15,12 @@ from src.datasets.polymarket_inventory import (
     render_inventory_manifest,
     render_inventory_summary_markdown,
 )
+from src.datasets.polymarket_canonical import (
+    DEFAULT_CANONICAL_WAREHOUSE_PATH,
+    CanonicalTableCounts,
+    PolymarketCanonicalBuildResult,
+    build_polymarket_canonical_dataset,
+)
 from src.datasets.polymarket_mapping import (
     CanonicalFieldMapping,
     DatasetSchemaSnapshot,
@@ -40,10 +46,14 @@ __all__ = [
     "SchemaColumn",
     "build_archive_inventory",
     "build_dataset_schema_snapshot",
+    "build_polymarket_canonical_dataset",
     "build_polymarket_inventory_report",
+    "CanonicalTableCounts",
     "classify_polymarket_path",
+    "DEFAULT_CANONICAL_WAREHOUSE_PATH",
     "inspect_parquet_schema",
     "parse_partition_range",
+    "PolymarketCanonicalBuildResult",
     "render_inventory_manifest",
     "render_inventory_summary_markdown",
     "resolve_closed_market_outcome",
