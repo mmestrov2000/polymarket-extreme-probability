@@ -204,7 +204,7 @@ Notes:
 ## Milestone 3 - Statistical Analysis
 
 ### T3.1 Compute calibration tables for extreme buckets
-Status: `pending`
+Status: `completed`
 
 Goal:
 - measure whether low and high probability buckets are miscalibrated
@@ -219,8 +219,13 @@ Acceptance criteria:
 - Polymarket and Kalshi can be compared side by side
 - the output is readable without notebook-only inspection
 
+Notes:
+- `src/analysis/extreme_probability.py` now persists `calibration_summaries`, `calibration_segments`, and `calibration_sensitivity` tables into the DuckDB warehouse.
+- `scripts/build_extreme_probability_analysis.py` writes a readable Markdown summary to `reports/summaries/milestone3_statistical_analysis.md`.
+- The analysis layer is venue-agnostic and covered by multi-venue fixture tests, but the current local raw archive remains Polymarket-only and the generated report flags missing `kalshi` coverage explicitly.
+
 ### T3.2 Add uncertainty estimates and sensitivity checks
-Status: `pending`
+Status: `completed`
 
 Goal:
 - separate signal from noise before drawing a conclusion
@@ -235,8 +240,12 @@ Acceptance criteria:
 - the repo shows at least one meaningful sensitivity analysis
 - any instability in the effect is made explicit
 
+Notes:
+- Summary tables include Wilson intervals and deterministic market-clustered bootstrap intervals for YES rates and calibration gaps.
+- `calibration_sensitivity` compares all-tick and threshold-entry gaps side by side and records directional flips, zero-crossing bootstrap intervals, and material magnitude shifts.
+
 ### T3.3 Segment the effect by venue and simple covariates
-Status: `pending`
+Status: `completed`
 
 Goal:
 - learn whether the bias is broad or concentrated
@@ -250,6 +259,10 @@ Acceptance criteria:
 - the repo reports venue-specific effects
 - at least one segmentation view exists
 - small-sample caveats are visible in the output
+
+Notes:
+- `calibration_segments` adds a time-to-expiry segmentation for both descriptive and market-aware views.
+- The Markdown report highlights threshold-entry segment rows and surfaces small-sample caveats directly in the rendered tables.
 
 ## Milestone 4 - Visualizations and Decision Memo
 
