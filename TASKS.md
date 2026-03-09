@@ -286,6 +286,7 @@ Notes:
 - `scripts/build_extreme_probability_reporting.py` now regenerates Milestone 4 figures from the canonical warehouse and writes SVG outputs under `reports/figures/`.
 - The current local archive generated `reports/figures/polymarket_bucketed_calibration.svg` plus `reports/figures/cross_venue_gap_comparison.svg`.
 - The combined comparison figure includes an explicit missing-venue placeholder for Kalshi because the current local archive still lacks `kalshi` canonical rows.
+- `notebooks/extreme_probability/01_extreme_probability_analysis.ipynb` now rebuilds the local warehouse on demand and renders interactive Polymarket thesis visuals directly from `data/raw/data/polymarket`.
 
 ### T4.2 Write the research conclusion memo
 Status: `completed`

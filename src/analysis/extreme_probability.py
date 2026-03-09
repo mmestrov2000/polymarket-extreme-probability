@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from collections import defaultdict
-from dataclasses import dataclass
+from src.compat import dataclass
 from datetime import datetime
 from hashlib import sha256
 import math

@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from ast import literal_eval
-from dataclasses import dataclass
+from src.compat import dataclass
 from decimal import Decimal, InvalidOperation
 import json
 from pathlib import Path

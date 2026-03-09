@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from src.compat import dataclass
 from pathlib import Path
 
 from src.datasets.archive_inventory import ArchiveInventory, DatasetInventorySummary, build_archive_inventory

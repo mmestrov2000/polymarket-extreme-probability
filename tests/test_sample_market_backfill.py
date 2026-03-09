@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-from datetime import UTC, datetime
 from decimal import Decimal
 from pathlib import Path
 
@@ -11,6 +10,7 @@ import httpx
 from src.clients import ClobClient, DataApiClient, GammaClient, GammaMarket, RequestConfig
 from src.ingestion import SampleMarketBackfillJob, SampleMarketSelectionRule, select_sample_markets
 from src.storage import PolymarketWarehouse, RawPayloadStore
+from src.time_compat import UTC, datetime
 
 
 FIXTURE_DIR = Path(__file__).parent / "fixtures" / "public_clients"

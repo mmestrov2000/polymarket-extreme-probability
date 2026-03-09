@@ -75,6 +75,12 @@ def test_extreme_probability_analysis_notebook_contains_research_focus() -> None
     assert "threshold-entry" in notebook_source
     assert "Wilson" in notebook_source
     assert "visualization" in notebook_source
+    assert "data/raw/data/polymarket" in notebook_source
+    assert "matplotlib" in notebook_source
+    assert "time-to-expiry" in notebook_source
+    assert "sys.path.insert" in notebook_source
+    assert "PROJECT_SPEC.md" in notebook_source
+    assert 'if "REPO_ROOT" not in globals()' in notebook_source
 
 
 def test_gitignore_keeps_local_only_assets_out_of_git() -> None:

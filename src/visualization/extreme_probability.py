@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from src.compat import dataclass
 from html import escape
 import math
 from pathlib import Path

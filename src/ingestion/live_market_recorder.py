@@ -3,8 +3,7 @@ from __future__ import annotations
 import asyncio
 import json
 import logging
-from dataclasses import dataclass
-from datetime import UTC, datetime, timedelta
+from src.compat import dataclass
 from pathlib import Path
 from typing import Any, Sequence
 
@@ -20,6 +19,7 @@ from src.clients.polymarket_websocket import (
 )
 from src.clients.rest import parse_optional_datetime, parse_optional_decimal, parse_optional_str
 from src.storage import DEFAULT_WAREHOUSE_PATH, PolymarketWarehouse, RawPayloadStore, TopOfBookSnapshot
+from src.time_compat import UTC, datetime, timedelta
 
 
 DEFAULT_LIVE_RECORDER_RAW_DIR = Path("data/raw")

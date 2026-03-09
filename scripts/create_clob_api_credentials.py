@@ -6,10 +6,6 @@ import os
 import re
 from pathlib import Path
 
-from dotenv import load_dotenv
-from py_clob_client.client import ClobClient
-from py_clob_client.exceptions import PolyApiException
-
 
 PRIVATE_KEY_PATTERN = re.compile(r"^0x[a-fA-F0-9]{64}$")
 ADDRESS_PATTERN = re.compile(r"^0x[a-fA-F0-9]{40}$")
@@ -123,8 +119,35 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+def load_py_clob_client():
+    try:
+        from py_clob_client.client import ClobClient
+        from py_clob_client.exceptions import PolyApiException
+    except ModuleNotFoundError as exc:
+        raise RuntimeError(
+            "py_clob_client is not installed in this environment. "
+            "Use Python 3.12 when available and rerun scripts/bootstrap_env.sh before creating CLOB API credentials."
+        ) from exc
+
+    return ClobClient, PolyApiException
+
+
+def load_python_dotenv():
+    try:
+        from dotenv import load_dotenv
+    except ModuleNotFoundError as exc:
+        raise RuntimeError(
+            "python-dotenv is not installed in this environment. "
+            "Rerun scripts/bootstrap_env.sh to install the repo CLI dependencies."
+        ) from exc
+
+    return load_dotenv
+
+
 def main() -> int:
     args = parse_args()
+    ClobClient, PolyApiException = load_py_clob_client()
+    load_dotenv = load_python_dotenv()
     repo_root = find_repo_root(Path.cwd().resolve())
     env_path = Path(args.env_file)
     if not env_path.is_absolute():

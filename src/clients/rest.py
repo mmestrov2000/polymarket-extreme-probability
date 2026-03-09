@@ -3,12 +3,13 @@ from __future__ import annotations
 import json
 import os
 import time
-from dataclasses import dataclass
-from datetime import UTC, datetime
+from src.compat import dataclass
 from decimal import Decimal, InvalidOperation
 from typing import Any
 
 import httpx
+
+from src.time_compat import UTC, datetime
 
 
 DEFAULT_REQUEST_TIMEOUT_SECONDS = 20.0

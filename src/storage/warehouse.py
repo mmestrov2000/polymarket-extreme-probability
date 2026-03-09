@@ -2,8 +2,7 @@ from __future__ import annotations
 
 from collections.abc import Iterable
 from contextlib import suppress
-from dataclasses import dataclass
-from datetime import UTC, datetime
+from src.compat import dataclass
 from decimal import Decimal
 from hashlib import sha256
 from pathlib import Path
@@ -13,6 +12,7 @@ import duckdb
 from src.clients.clob import OrderBookSnapshot, PriceHistory
 from src.clients.data_api import TradeRecord
 from src.clients.gamma import GammaMarket
+from src.time_compat import UTC, datetime
 
 
 DEFAULT_WAREHOUSE_PATH = Path("data/warehouse/polymarket.duckdb")

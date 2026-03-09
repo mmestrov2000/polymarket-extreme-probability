@@ -2,12 +2,13 @@ from __future__ import annotations
 
 import json
 import re
-from dataclasses import dataclass
-from datetime import UTC, datetime
+from src.compat import dataclass
 from decimal import Decimal
 from pathlib import Path
 from typing import Any
 from uuid import uuid4
+
+from src.time_compat import UTC, datetime
 
 
 DEFAULT_RAW_DATA_DIR = Path("data/raw")

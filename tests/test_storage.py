@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-from datetime import UTC, datetime
 from decimal import Decimal
 
 import duckdb
@@ -11,6 +10,7 @@ from src.clients.data_api import TradeRecord
 from src.clients.gamma import GammaMarket
 from src.storage.raw import RawPayloadStore
 from src.storage.warehouse import PolymarketWarehouse, TopOfBookSnapshot
+from src.time_compat import UTC, datetime
 
 
 def test_raw_payload_store_uses_append_only_json_and_jsonl_layout(tmp_path) -> None:

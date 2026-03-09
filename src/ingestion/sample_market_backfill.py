@@ -1,13 +1,13 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
-from datetime import UTC, datetime
+from src.compat import dataclass
 from decimal import Decimal
 from pathlib import Path
 from typing import Iterable
 
 from src.clients import ClobClient, DataApiClient, GammaClient, GammaMarket
 from src.storage import DEFAULT_WAREHOUSE_PATH, PolymarketWarehouse, RawPayloadStore
+from src.time_compat import UTC, datetime
 
 
 DEFAULT_SAMPLE_SIZE = 3
